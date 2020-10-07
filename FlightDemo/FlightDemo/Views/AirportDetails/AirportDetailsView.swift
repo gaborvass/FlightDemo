@@ -239,12 +239,12 @@ class AirportDetailsView: UIView {
         self.closestAirportNameLabel.translatesAutoresizingMaskIntoConstraints = false
         self.closestAirportNameLabel.font = UIDesign.Fonts.label
         self.closestAirportNameLabel.textColor = UIDesign.Colors.label
-        self.closestAirportNameLabel.numberOfLines = 0
         self.addSubview(self.closestAirportNameLabel)
 
         self.closestAirportNameText.translatesAutoresizingMaskIntoConstraints = false
         self.closestAirportNameText.font = UIDesign.Fonts.value
         self.closestAirportNameText.textColor = UIDesign.Colors.value
+        self.closestAirportNameText.numberOfLines = 0
         self.addSubview(self.closestAirportNameText)
 
         NSLayoutConstraint.activate([
@@ -255,7 +255,7 @@ class AirportDetailsView: UIView {
             self.closestAirportNameText.leadingAnchor.constraint(equalTo: self.closestAirportNameLabel.trailingAnchor, constant: 8),
             self.closestAirportNameText.topAnchor.constraint(equalTo: self.closestAirportNameLabel.topAnchor),
             self.closestAirportNameText.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-            self.closestAirportNameText.heightAnchor.constraint(equalTo: self.closestAirportNameLabel.heightAnchor)
+            self.closestAirportNameText.heightAnchor.constraint(greaterThanOrEqualToConstant: 25)
         ])
     }
 

@@ -40,8 +40,8 @@ class AirportDetailsViewModel {
             return []
         }
         let airportsNearby = self.airports.filter {
-            let latDiff = abs(abs(selectedAirport.latitude) - abs($0.latitude))
-            let longDiff = abs(abs(selectedAirport.longitude) - abs($0.longitude))
+            let latDiff = abs(selectedAirport.latitude - $0.latitude)
+            let longDiff = abs(selectedAirport.longitude - $0.longitude)
             return latDiff < degree && latDiff != degree && longDiff < degree && longDiff != 0
         }
         if airportsNearby.count == 0 {
